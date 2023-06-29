@@ -1,0 +1,89 @@
+body{
+    background: rgb(100,19,245);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 2%, rgba(121,32,153,1) 76%);
+    background-attachment: fixed;
+    margin:0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+
+ 
+.container{
+    width: 500px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form{
+    margin-top: 20px;
+    width:100%;
+    transition: border-radius 1s;
+    
+    background-color: whitesmoke;
+    border-radius: 20px 10px 20px 10px;
+    padding:30px;
+}
+
+#form:hover{
+    border-radius: 40px 20px 40px 20px;
+    transition: border-radius 1s;
+}
+
+h1{
+    text-align: center;
+    color:#792099;
+}
+
+#form button{
+    background-color: #792099;
+    color:white;
+    border: 1px solid #792099;
+    border-radius: 5px;
+    padding:10px;
+    margin:20px 0px;
+    cursor:pointer;
+    font-size:20px;
+    width:100%;
+}
+
+.input-group{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+h1:hover{
+    text-emphasis-color: black;
+    text-shadow: 1px 0px 2px red;
+    transition: text-shadow 2s;
+    text-decoration-color: #7e1717;
+}
+.input-group input{
+    border-radius: 5px;
+    font-size:20px;
+    margin-top:5px;
+    padding:10px;
+    border:1px solid rgb(34,193,195) ;
+}
+
+.input-group input:focus{
+    outline:0;
+}
+
+.input-group .error{
+    color:rgb(242, 18, 18);
+    font-size:16px;
+    margin-top: 5px;
+}
+
+.input-group.success input{
+    border-color: #0cc477;
+}
+
+.input-group.error input{
+    border-color:rgb(206, 67, 67);
+}
