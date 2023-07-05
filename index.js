@@ -7,12 +7,6 @@ const successMessage = document.getElementById('success-message');
 
 
 
-form.addEventListener('submit', (e) => {
-    
-    if (!validateInputs()) {
-        e.preventDefault();
-    }
-});
 
 
 function validateInputs(){
@@ -101,14 +95,21 @@ const validateEmail = (email) => {
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent form submission
     
+    if (!validateInputs()) {
+        e.preventDefault();
+    }
+    
     const isAnyInputEmpty = Array.from(form.elements).some((element) => {
         return element.tagName === 'INPUT' && element.value.trim() === '';
     });
+    
     // Log the form data
     console.log('Username:', username.value.trim());
     console.log('Email:', email.value.trim());
     console.log('Password:', password.value.trim());
     console.log('Confirm Password:', cpassword.value.trim());
+
+    
 
     // Clear the input values
     username.value = '';
