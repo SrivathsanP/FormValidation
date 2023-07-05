@@ -3,6 +3,8 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
+const successMessage = document.getElementById('success-message');
+
 
 
 form.addEventListener('submit', (e) => {
@@ -19,7 +21,6 @@ function validateInputs(){
     const passwordVal = password.value.trim();
     const cpasswordVal = cpassword.value.trim();
     
-
     if(usernameVal===''){
         
         setError(username,'Username is required')
@@ -99,7 +100,10 @@ const validateEmail = (email) => {
  // Add event listener for form submission
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent form submission
-
+    
+    const isAnyInputEmpty = Array.from(form.elements).some((element) => {
+        return element.tagName === 'INPUT' && element.value.trim() === '';
+    });
     // Log the form data
     console.log('Username:', username.value.trim());
     console.log('Email:', email.value.trim());
@@ -111,4 +115,17 @@ form.addEventListener('submit', (e) => {
     email.value = '';
     password.value = '';
     cpassword.value = '';
+
+
+     if (!isAnyInputEmpty) {
+                successMessage.style.display = 'block';
+
+                // Hide the success message after 2 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 2000);
+            }
 });
+
+
+
