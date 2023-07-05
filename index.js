@@ -4,15 +4,9 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
-form.addEventListener('submit', (e) => {
-    console.log('Submit button clicked');
-    console.log('Event:', e); // Log the event object
-    console.log('Form:', form); // Log the form element
-    console.log('Username:', username.value.trim()); // Log the username value
-    console.log('Email:', email.value.trim()); // Log the email value
-    console.log('Password:', password.value.trim()); // Log the password value
-    console.log('Confirm Password:', cpassword.value.trim()); // Log the confirm password value
 
+form.addEventListener('submit', (e) => {
+    
     if (!validateInputs()) {
         e.preventDefault();
     }
@@ -100,3 +94,21 @@ const validateEmail = (email) => {
       );
       
   };
+
+
+ // Add event listener for form submission
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent form submission
+
+    // Log the form data
+    console.log('Username:', username.value.trim());
+    console.log('Email:', email.value.trim());
+    console.log('Password:', password.value.trim());
+    console.log('Confirm Password:', cpassword.value.trim());
+
+    // Clear the input values
+    username.value = '';
+    email.value = '';
+    password.value = '';
+    cpassword.value = '';
+});
